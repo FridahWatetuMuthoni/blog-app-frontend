@@ -4,10 +4,11 @@ import image from "../../assets/profile-background.jpg";
 import { Link } from "react-router-dom";
 
 function Blog({ blog }) {
+  const random_image = "https://random.imagecdn.app/500/300"
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
-        <img className="w-full mb-1" src='https://random.imagecdn.app/500/500' />
+        <img className="w-full mb-1" src={random_image}/>
       </Link>
       <div className="p-4 pt-2">
         <div className="mb-4">
