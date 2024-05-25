@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  main {
+    --color-bkg: 242 249 254;
+    /* --color-content: 15, 23, 42; */
+    --color-content: 34 51 68;
+    --color-primary: 42 77 208;
+    --color-secondary: 75 160 84;
+    --muted: 51 65 85;
+    --hover: 109 101 101;
+    --button: 15 23 42;
+  }
+  main[data-theme="dark"] {
+    --color-bkg: 17 23 41;
+    --color-content: 255 255 255;
+    --color-primary: 42 77 208;
+    --color-secondary: 75 160 84;
+    --muted: 209 213 219;
+    --hover: 180 187 194;
+    --button: 37 99 235;
+  }
+}
+
+.color {
+  color: rgb(109, 101, 101);
+}
