@@ -30,7 +30,7 @@ function Navbar() {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
           </svg>
-          <span className="ml-3 text-xl">Gallery</span>
+          <span className="ml-3 text-xl">Blog</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center gap-y-4 md:gap-y-0">
           <Link to="/" className="mr-5 hover:text-muted">
