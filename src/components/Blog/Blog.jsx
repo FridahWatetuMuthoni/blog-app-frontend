@@ -10,7 +10,7 @@ function Blog({ blog }) {
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
-        <img className="w-full mb-1" src={random_image} />
+        <img className="w-full mb-1" src={random_image()} />
       </Link>
       <div className="p-4 pt-2">
         <div className="mb-4">
