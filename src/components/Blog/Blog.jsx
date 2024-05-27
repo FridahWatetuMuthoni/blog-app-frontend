@@ -4,6 +4,7 @@ import image from "../../assets/profile-background.jpg";
 import { Link } from "react-router-dom";
 
 function Blog({ blog }) {
+  console.log(blog)
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
