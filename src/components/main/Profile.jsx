@@ -5,6 +5,7 @@ import useGlobalContext from "../../hooks/useGlobalContext";
 import { useQuery } from "@tanstack/react-query";
 import { Loading, Error } from "../Utils";
 import { Link } from "react-router-dom";
+import image from "../../assets/default.jpg";
 
 function Profile() {
   const axiosInstance = useAxios();
@@ -30,8 +31,7 @@ function Profile() {
     <div className="p-5 shadow-xl border mx-5 rounded text-center text-muted max-w-full md:max-w-sm md:mx-auto mt-5 md:mt-20">
       <img
         className="w-32 h-32 rounded-full mx-auto"
-        // src={data?.profile_image}
-        src="https://loremflickr.com/320/320/girl"
+        src={data?.profile_image || image}
         alt={data?.first_name + data?.last_name}
       />
       <div className="text-sm mt-6">
