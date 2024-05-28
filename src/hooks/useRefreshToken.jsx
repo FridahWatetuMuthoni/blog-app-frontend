@@ -17,11 +17,19 @@ const useRefreshToken = () => {
           const response = await axiosInstance.post("users/refresh/", {
             refresh: refresh_token,
           });
-          localStorage.setItem("access_token", response?.data?.access);
-          setAccessToken(response?.data?.access);
-          return response?.data?.access;
+          if (response?.data?.status === 200) {
+            localStorage.setItem("access_token", response?.data?.access);
+            setAccessToken(response?.data?.access);
+            return response?.data?.access;
+          } else {
+            localStorage.removeItem("refresh_token");
+            localStorage.removeItem("access_token");
+          }
         } catch (error) {
           console.log(error);
+
+          localStorage.removeItem("refresh_token");
+          localStorage.removeItem("access_token");
         }
       } else {
         localStorage.removeItem("refresh_token");
