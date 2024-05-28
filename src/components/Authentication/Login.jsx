@@ -22,18 +22,19 @@ function Login() {
         "https://blog-app-backend-8l7p.onrender.com/users/login/",
         user
       );
-      if (response.status === 200) {
-        setRefreshToken(response?.data?.refresh);
-        setAccessToken(response?.data?.access);
-        localStorage.setItem("access_token", response?.data?.access);
-        localStorage.setItem("refresh_token", response?.data?.refresh);
-        const decoded_data = jwtDecode(response?.data?.access);
-        localStorage.setItem("userID", decoded_data.user_id);
-        setUserID(decoded_data.user_id);
-
-        navigate("/");
-      }
       return response;
+    },
+    onSuccess: ({ data, variables, context }) => {
+      console.log(`${context}--${variables}`);
+      setRefreshToken(data?.refresh);
+      setAccessToken(data?.access);
+      localStorage.setItem("access_token", data?.access);
+      localStorage.setItem("refresh_token", data?.refresh);
+      const decoded_data = jwtDecode(data?.access);
+      localStorage.setItem("userID", decoded_data.user_id);
+      setUserID(decoded_data.user_id);
+
+      navigate("/");
     },
   });
 

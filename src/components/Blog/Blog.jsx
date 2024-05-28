@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import profile from "../../assets/default.jpg";
-import image from "../../assets/profile-background.jpg";
+// import image from "../../assets/profile-background.jpg";
 import { Link } from "react-router-dom";
 
 function Blog({ blog }) {
