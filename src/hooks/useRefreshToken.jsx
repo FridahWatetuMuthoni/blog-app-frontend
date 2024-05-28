@@ -24,16 +24,19 @@ const useRefreshToken = () => {
           } else {
             localStorage.removeItem("refresh_token");
             localStorage.removeItem("access_token");
+            setAccessToken(null);
           }
         } catch (error) {
           console.log(error);
 
           localStorage.removeItem("refresh_token");
           localStorage.removeItem("access_token");
+          setAccessToken(null);
         }
       } else {
         localStorage.removeItem("refresh_token");
         localStorage.removeItem("access_token");
+        setAccessToken(null);
       }
     }
   };
