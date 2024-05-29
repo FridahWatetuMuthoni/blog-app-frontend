@@ -4,11 +4,18 @@ import profile from "../../assets/default.jpg";
 import { Link } from "react-router-dom";
 
 function Blog({ blog }) {
-  console.log(blog)
+  console.log(blog);
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
-        <img className="w-full mb-1" src={blog.image} />
+        <img
+          className="w-full mb-1"
+          src={blog.image}
+          fixed={{
+            width: 500,
+            height: 250,
+          }}
+        />
       </Link>
       <div className="p-4 pt-2">
         <div className="mb-4">

@@ -30,7 +30,11 @@ const BlogDetail = () => {
         <div className="">
           <div className="w-full  mb-2">
             <img
-              src={image}
+              src={blog.image}
+              fixed={{
+                width: 800,
+                height: 500,
+              }}
               alt="Featured Image"
               className="w-full h-64 object-cover rounded"
             />
@@ -96,7 +100,7 @@ const BlogDetail = () => {
                           ></path>
                           <path d="M0 0h24v24H0z" fill="none" />
                         </svg>
-                        <span className="ml-1">{blog.author.username}</span>
+                        <span className="ml-1">{blog.author_username}</span>
                       </a>
                     </div>
                     <hr />
