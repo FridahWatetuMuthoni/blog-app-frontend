@@ -21,10 +21,6 @@ const useRefreshToken = () => {
             localStorage.setItem("access_token", response?.data?.access);
             setAccessToken(response?.data?.access);
             return response?.data?.access;
-          } else {
-            localStorage.removeItem("refresh_token");
-            localStorage.removeItem("access_token");
-            setAccessToken(null);
           }
         } catch (error) {
           console.log(error);
