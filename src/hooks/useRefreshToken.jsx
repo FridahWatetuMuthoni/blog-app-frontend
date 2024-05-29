@@ -17,11 +17,9 @@ const useRefreshToken = () => {
           const response = await axiosInstance.post("users/refresh/", {
             refresh: refresh_token,
           });
-          if (response.status === 200) {
-            localStorage.setItem("access_token", response?.data?.access);
-            setAccessToken(response?.data?.access);
-            return response?.data?.access;
-          }
+          localStorage.setItem("access_token", response?.data?.access);
+          setAccessToken(response?.data?.access);
+          return response?.data?.access;
         } catch (error) {
           console.log(error);
 
