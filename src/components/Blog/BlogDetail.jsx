@@ -1,4 +1,4 @@
-import image from "../../assets/profile-background.jpg";
+// import image from "../../assets/profile-background.jpg";
 import { Link, useLocation } from "react-router-dom";
 
 const BlogDetail = () => {
@@ -31,10 +31,8 @@ const BlogDetail = () => {
           <div className="w-full  mb-2">
             <img
               src={blog.image}
-              fixed={{
-                width: 800,
-                height: 500,
-              }}
+              height="800px"
+              width="500px"
               alt="Featured Image"
               className="w-full h-64 object-cover rounded"
             />

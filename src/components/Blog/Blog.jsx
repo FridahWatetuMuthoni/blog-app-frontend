@@ -11,10 +11,8 @@ function Blog({ blog }) {
         <img
           className="w-full mb-1"
           src={blog.image}
-          fixed={{
-            width: 500,
-            height: 250,
-          }}
+          height="250px"
+          width="500px"
         />
       </Link>
       <div className="p-4 pt-2">
