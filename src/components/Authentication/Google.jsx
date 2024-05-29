@@ -13,9 +13,7 @@ function Google() {
 
   const mutation = useMutation({
     mutationFn: (payload) => googleRegister(payload),
-    onSuccess: ({ data, variables, context }) => {
-      console.log(`${context}--${variables}`);
-      console.log(data);
+    onSuccess: (data) => {
       setRefreshToken(data?.refresh);
       setAccessToken(data?.access);
       localStorage.setItem("access_token", data?.access);

@@ -4,16 +4,12 @@ import profile from "../../assets/default.jpg";
 import { Link } from "react-router-dom";
 
 function Blog({ blog }) {
-  console.log(blog);
+  const date = new Date(blog.published);
+  const options = { year: "numeric", month: "long", day: "numeric" };
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
-        <img
-          className="w-full mb-1"
-          src={blog.image}
-          height="250px"
-          width="500px"
-        />
+        <img className="w-full mb-1 h-48" src={blog.image} />
       </Link>
       <div className="p-4 pt-2">
         <div className="mb-4">
@@ -22,9 +18,15 @@ function Blog({ blog }) {
             state={blog}
             className=" font-bold text-lg mb-2 hover:text-indigo-600 inline-block"
           >
-            {blog.title}
+            {blog.title.length > 60
+              ? blog.title.slice(0, 60) + "..."
+              : blog.title}
           </Link>
-          <p className="text-muted text-sm">{blog.excerpt.slice(0, 150)}...</p>
+          <p className="text-muted text-sm">
+            {blog.excerpt.length > 200
+              ? blog.excerpt.slice(0, 200) + "..."
+              : blog.excerpt}
+          </p>
         </div>
         <div className="flex items-center">
           <Link to={`/blog/${blog.id}`} state={blog}>
@@ -39,9 +41,11 @@ function Blog({ blog }) {
               href="#"
               className=" font-semibold leading-none hover:text-indigo-600"
             >
-              Jonathan Reinink
+              {blog.author_username}
             </a>
-            <p className="text-muted">Aug 18</p>
+            <p className="text-muted">
+              {date.toLocaleDateString("en-US", options)}
+            </p>
           </div>
         </div>
       </div>

@@ -26,12 +26,11 @@ function Profile() {
   if (error) {
     return <Error error={error} />;
   }
-
   return (
     <div className="p-5 shadow-xl border mx-5 rounded text-center text-muted max-w-full md:max-w-sm md:mx-auto mt-5 md:mt-20">
       <img
         className="w-32 h-32 rounded-full mx-auto"
-        src={data?.profile_image || image}
+        src={image}
         alt={data?.first_name + data?.last_name}
       />
       <div className="text-sm mt-6">

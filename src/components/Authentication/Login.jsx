@@ -18,8 +18,7 @@ function Login() {
 
   const mutation = useMutation({
     mutationFn: (user) => loginUser(user),
-    onSuccess: ({ data, variables, context }) => {
-      console.log(`${context}--${variables}`);
+    onSuccess: (data) => {
       setRefreshToken(data?.refresh);
       setAccessToken(data?.access);
       localStorage.setItem("access_token", data?.access);
@@ -27,7 +26,6 @@ function Login() {
       const decoded_data = jwtDecode(data?.access);
       localStorage.setItem("userID", decoded_data.user_id);
       setUserID(decoded_data.user_id);
-
       navigate("/");
     },
   });

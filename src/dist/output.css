@@ -799,6 +799,10 @@ main[data-theme="dark"] {
   margin-top: 2.25rem;
 }
 
+.mb-48{
+  margin-bottom: 12rem;
+}
+
 .block{
   display: block;
 }
@@ -878,6 +882,10 @@ main[data-theme="dark"] {
 
 .h-screen{
   height: 100vh;
+}
+
+.h-48{
+  height: 12rem;
 }
 
 .min-h-full{

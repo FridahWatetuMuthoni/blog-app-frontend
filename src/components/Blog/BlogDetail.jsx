@@ -31,8 +31,6 @@ const BlogDetail = () => {
           <div className="w-full  mb-2">
             <img
               src={blog.image}
-              height="800px"
-              width="500px"
               alt="Featured Image"
               className="w-full h-64 object-cover rounded"
             />
