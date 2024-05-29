@@ -3,7 +3,7 @@ import { GoogleLoginButton } from "react-social-login-buttons";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../api/axiosInstance";
+import { googleRegister } from "../../queries/api";
 
 function Google() {
   const clientID =
@@ -12,10 +12,7 @@ function Google() {
   const { setAccessToken, setRefreshToken, setUserID } = useGlobalContext();
 
   const mutation = useMutation({
-    mutationFn: async (payload) => {
-      const response = await axiosInstance.post("users/google/", payload);
-      return response;
-    },
+    mutationFn: (payload) => googleRegister(payload),
     onSuccess: ({ data, variables, context }) => {
       console.log(`${context}--${variables}`);
       console.log(data);

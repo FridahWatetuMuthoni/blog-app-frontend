@@ -5,7 +5,7 @@ import Google from "./Google";
 import Facebook from "./Facebook";
 import { useMutation } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
-import axios from "axios";
+import { loginUser } from "../../queries/api";
 
 function Login() {
   const { setAccessToken, setRefreshToken, setUserID } = useGlobalContext();
@@ -17,13 +17,7 @@ function Login() {
   });
 
   const mutation = useMutation({
-    mutationFn: async (user) => {
-      const response = await axios.post(
-        "https://blog-app-backend-8l7p.onrender.com/users/login/",
-        user
-      );
-      return response;
-    },
+    mutationFn: (user) => loginUser(user),
     onSuccess: ({ data, variables, context }) => {
       console.log(`${context}--${variables}`);
       setRefreshToken(data?.refresh);
