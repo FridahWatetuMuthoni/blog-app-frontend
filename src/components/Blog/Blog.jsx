@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function Blog({ blog }) {
   const date = new Date(blog.published);
   const options = { year: "numeric", month: "long", day: "numeric" };
+  console.log(blog);
   return (
     <div className=" shadow-2xl rounded-md flex flex-col justify-between leading-normal">
       <Link to={`/blog/${blog.id}`} state={blog}>
