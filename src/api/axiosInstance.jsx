@@ -3,6 +3,7 @@ import axios from "axios";
 // const BASE_URL =
 //   "https://social-authentication-system-backend.onrender.com/users/";
 // const BASE_URL = "http://localhost:8000";
+//base url
 const BASE_URL = "https://core-tjnk.onrender.com/";
 
 const axiosInstance = axios.create({
