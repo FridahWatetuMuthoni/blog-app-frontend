@@ -799,10 +799,6 @@ main[data-theme="dark"] {
   margin-top: 2.25rem;
 }
 
-.mb-48{
-  margin-bottom: 12rem;
-}
-
 .block{
   display: block;
 }
@@ -841,6 +837,10 @@ main[data-theme="dark"] {
 
 .h-32{
   height: 8rem;
+}
+
+.h-48{
+  height: 12rem;
 }
 
 .h-5{
@@ -884,10 +884,6 @@ main[data-theme="dark"] {
   height: 100vh;
 }
 
-.h-48{
-  height: 12rem;
-}
-
 .min-h-full{
   min-height: 100%;
 }
@@ -908,6 +904,10 @@ main[data-theme="dark"] {
   width: 0.75rem;
 }
 
+.w-3\/4{
+  width: 75%;
+}
+
 .w-32{
   width: 8rem;
 }
@@ -926,6 +926,14 @@ main[data-theme="dark"] {
 
 .w-full{
   width: 100%;
+}
+
+.w-4\/5{
+  width: 80%;
+}
+
+.w-11\/12{
+  width: 91.666667%;
 }
 
 .max-w-2xl{
@@ -2039,10 +2047,6 @@ main[data-theme="dark"] {
 
   .md\:items-center{
     align-items: center;
-  }
-
-  .md\:justify-around{
-    justify-content: space-around;
   }
 
   .md\:gap-2{

@@ -156,7 +156,7 @@ function Login() {
             <p className=" text-sm">Or continue with </p>
             <hr className=" w-28 md:w-36" />
           </section>
-          <section className="w-3/4 mx-auto">
+          <section className=" w-11/12 mx-auto px-1">
             <Google />
           </section>
           <section className="flex items-center text-sm mt-10 justify-between md:px-8">
@@ -169,7 +169,6 @@ function Login() {
                 Register
               </Link>
             </section>
-
           </section>
         </div>
       </div>
