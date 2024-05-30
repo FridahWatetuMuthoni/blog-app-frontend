@@ -266,11 +266,11 @@ function Register() {
             <p className=" text-sm">Or continue with </p>
             <hr className="w:26 md:w-32" />
           </section>
-          <section className="flex items-center  w-full px-1">
+          <section className=" w-3/4 mx-auto">
             <Google />
           </section>
           <section className="flex flex-col md:flex-row items-center text-sm mt-6 justify-between gap-2 md:gap-2 ml-2">
-            <section className="flex items-center">
+            <section className="flex items-center ">
               <span>Already have an account? </span>
               <Link
                 to="/login/"
