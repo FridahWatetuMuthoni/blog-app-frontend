@@ -4,7 +4,7 @@ import axios from "axios";
 //   "https://social-authentication-system-backend.onrender.com/users/";
 // const BASE_URL = "http://localhost:8000";
 //base url
-const BASE_URL = "https://core-tjnk.onrender.com/";
+const BASE_URL = "https://watetu.pythonanywhere.com/";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,

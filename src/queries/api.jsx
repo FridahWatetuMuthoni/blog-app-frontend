@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://core-tjnk.onrender.com/";
+const BASE_URL = "https://watetu.pythonanywhere.com/";
 const axios_instance = axios.create({
   baseURL: BASE_URL,
 });
