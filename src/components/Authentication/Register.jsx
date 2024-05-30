@@ -1,6 +1,6 @@
 import { useNavigate, Link } from "react-router-dom";
 import Google from "./Google";
-import Facebook from "./Facebook";
+// import Facebook from "./Facebook";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -266,9 +266,8 @@ function Register() {
             <p className=" text-sm">Or continue with </p>
             <hr className="w:26 md:w-32" />
           </section>
-          <section className="flex flex-col md:flex-row items-center gap-2 w-full md:justify-around px-1">
+          <section className="flex items-center  w-full px-1">
             <Google />
-            <Facebook />
           </section>
           <section className="flex flex-col md:flex-row items-center text-sm mt-6 justify-between gap-2 md:gap-2 ml-2">
             <section className="flex items-center">

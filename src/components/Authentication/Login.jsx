@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import { useState } from "react";
 import Google from "./Google";
-import Facebook from "./Facebook";
+// import Facebook from "./Facebook";
 import { useMutation } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
 import { loginUser } from "../../queries/api";
@@ -156,9 +156,8 @@ function Login() {
             <p className=" text-sm">Or continue with </p>
             <hr className=" w-28 md:w-36" />
           </section>
-          <section className="flex items-center gap-4 w-full md:px-8">
+          <section className="flex items-center w-full px-1">
             <Google />
-            <Facebook />
           </section>
           <section className="flex items-center text-sm mt-10 justify-between md:px-8">
             <section className="flex items-center">
@@ -171,14 +170,6 @@ function Login() {
               </Link>
             </section>
 
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-semibold text-indigo-600 hover:text-indigo-500"
-              >
-                Forgot password
-              </a>
-            </div>
           </section>
         </div>
       </div>

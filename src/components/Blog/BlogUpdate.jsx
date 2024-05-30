@@ -20,7 +20,7 @@ function BlogUpdate() {
   const mutation = useMutation({
     mutationFn: async (post) => {
       const response = await axiosInstance.patch(`blog/${blog.id}/`, post);
-      console.log(response.data)
+      console.log(response.data);
       return response.data;
     },
     onSuccess: () => {
@@ -199,7 +199,7 @@ function BlogUpdate() {
               type="submit"
               disabled={mutation.isLoading}
             >
-              {mutation.isLoading ? "updating..." : "Update Blog"}
+              {mutation.isPending ? "Updating Blog..." : "Update Blog"}
             </button>
           </div>
         </form>
