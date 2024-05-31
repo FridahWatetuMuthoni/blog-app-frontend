@@ -150,13 +150,13 @@ function Login() {
               </button>
             </div>
           </form>
-          {/* text-gray-500 */}
-          <section className="flex items-center justify-center text-content gap-2 w-full my-5">
-            <hr className=" w-28 md:36" />
+          
+          <section className="flex items-center justify-center text-content gap-2 w-full my-5 ">
+            <hr className="w-26 md:w-32" />
             <p className=" text-sm">Or continue with </p>
-            <hr className=" w-28 md:w-36" />
+            <hr className="w:26 md:w-32" />
           </section>
-          <section className=" w-11/12 mx-auto px-1">
+          <section className=" w-full">
             <Google />
           </section>
           <section className="flex items-center text-sm mt-10 justify-between md:px-8">

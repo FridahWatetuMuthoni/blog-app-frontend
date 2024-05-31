@@ -896,16 +896,8 @@ main[data-theme="dark"] {
   width: 2.5rem;
 }
 
-.w-28{
-  width: 7rem;
-}
-
 .w-3{
   width: 0.75rem;
-}
-
-.w-3\/4{
-  width: 75%;
 }
 
 .w-32{
@@ -926,14 +918,6 @@ main[data-theme="dark"] {
 
 .w-full{
   width: 100%;
-}
-
-.w-4\/5{
-  width: 80%;
-}
-
-.w-11\/12{
-  width: 91.666667%;
 }
 
 .max-w-2xl{
@@ -2015,10 +1999,6 @@ main[data-theme="dark"] {
 
   .md\:w-32{
     width: 8rem;
-  }
-
-  .md\:w-36{
-    width: 9rem;
   }
 
   .md\:max-w-lg{
