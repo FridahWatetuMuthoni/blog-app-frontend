@@ -149,9 +149,7 @@ function Login() {
                 {mutation.isPending ? "Submitting Form" : "Submit"}
               </button>
             </div>
-          </form>
-          
-          <section className="flex items-center justify-center text-content gap-2 w-full my-5 ">
+            <section className="flex items-center justify-center text-content gap-2 w-full my-5 ">
             <hr className="w-26 md:w-32" />
             <p className=" text-sm">Or continue with </p>
             <hr className="w:26 md:w-32" />
@@ -159,6 +157,9 @@ function Login() {
           <section className=" w-full">
             <Google />
           </section>
+          </form>
+          
+          
           <section className="flex items-center text-sm mt-10 justify-between md:px-8">
             <section className="flex items-center">
               <span>Dont have an account? </span>
