@@ -32,7 +32,7 @@ const BlogDetail = () => {
             <img
               src={blog.image}
               alt="Featured Image"
-              className="w-full h-64 object-cover rounded"
+              className=" w-8/12 mx-auto h-64 object-cover rounded"
             />
             <div className="relative p-6">
               <div className="max-w-3xl mx-auto">
@@ -126,7 +126,7 @@ const BlogDetail = () => {
           </Link>
         </div>
       </main>
-      <footer className="bg-gray-800 flex items-center justify-center  h-20">
+      <footer className="bg-gray-800 flex items-center justify-center  h-20 w-8/12 mx-auto">
         <p className="text-center text-white">
           Copyright {new Date().getFullYear()}{" "}
         </p>
