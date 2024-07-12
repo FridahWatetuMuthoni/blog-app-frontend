@@ -165,7 +165,6 @@ function Login() {
             </section>
             <section className=" flex flex-col md:flex-row items-center justify-center gap-2 w-full md:justify-around">
               <Google setLoading = {setLoading} />
-              <Facebook />
             </section>
           </form>
           {/* text-gray-500 */}
