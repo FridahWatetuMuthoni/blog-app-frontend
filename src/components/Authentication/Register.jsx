@@ -1,11 +1,13 @@
 import { useNavigate, Link } from "react-router-dom";
 import Google from "./Google";
-// import Facebook from "./Facebook";
+import Facebook from "./Facebook";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRegister } from "../../queries/mutations";
 import useGlobalContext from "../../hooks/useGlobalContext";
+import { useState } from "react";
+import Loading from "../Utils/Loading";
 
 const schema = z
   .object({
@@ -34,6 +36,7 @@ const schema = z
 function Register() {
   const navigate = useNavigate();
   const registerUser = useRegister();
+  const [loading, setLoading] = useState(false)
   const { setAccessToken, setRefreshToken, setUserID } = useGlobalContext();
   const {
     register,
@@ -52,6 +55,7 @@ function Register() {
   });
 
   const onSubmit = async (data) => {
+    setLoading(true)
     try {
       const response = await registerUser.mutateAsync(data);
       setAccessToken(response.access);
@@ -60,11 +64,16 @@ function Register() {
       localStorage.setItem("refresh_token", response.refresh);
       localStorage.setItem("userID", response.user.pk);
       setUserID(response.user.pk);
+      setLoading(false)
       navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
+
+  if(loading){
+    return <Loading/>
+  }
 
   return (
     <section className="h-full">
@@ -266,11 +275,11 @@ function Register() {
             <p className=" text-sm">Or continue with </p>
             <hr className="w:26 md:w-32" />
           </section>
-          <section className=" w-full">
-            <Google />
+          <section className="flex flex-col md:flex-row items-center gap-2 w-full md:justify-around px-1">
+            <Google setLoading={setLoading}/>
           </section>
           <section className="flex flex-col md:flex-row items-center text-sm mt-6 justify-between gap-2 md:gap-2 ml-2">
-            <section className="flex items-center ">
+            <section className="flex items-center">
               <span>Already have an account? </span>
               <Link
                 to="/login/"

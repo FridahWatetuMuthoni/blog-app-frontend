@@ -23,14 +23,15 @@ function useAxios() {
       async (error) => {
         const originalRequest = error?.config;
         if (
-          error?.response?.status === 401 ||
-          error?.response?.statusText === "Unauthorized" ||
-          !originalRequest?.sent
+          error?.response?.status === 401 &&
+          !originalRequest?._retry
         ) {
-          originalRequest.sent = true;
+          originalRequest._retry = true;
           const new_access_token = await refresh();
-          originalRequest.headers["Authorization"] = `JWT ${new_access_token}`;
-          return axiosInstance(originalRequest);
+          if(new_access_token){
+            originalRequest.headers["Authorization"] = `JWT ${new_access_token}`;
+            return axiosInstance(originalRequest);  
+          }
         }
         return Promise.reject(error);
       }

@@ -2,13 +2,15 @@ import { useNavigate, Link } from "react-router-dom";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import { useState } from "react";
 import Google from "./Google";
-// import Facebook from "./Facebook";
+import Facebook from "./Facebook";
 import { useMutation } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
 import { loginUser } from "../../queries/api";
+import Loading from '../Utils/Loading'
 
 function Login() {
   const { setAccessToken, setRefreshToken, setUserID } = useGlobalContext();
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
@@ -19,6 +21,7 @@ function Login() {
   const mutation = useMutation({
     mutationFn: (user) => loginUser(user),
     onSuccess: (data) => {
+      setLoading(false)
       setRefreshToken(data?.refresh);
       setAccessToken(data?.access);
       localStorage.setItem("access_token", data?.access);
@@ -41,9 +44,15 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (user.email.trim() && user.password.trim()) {
+      setLoading(true)
       mutation.mutateAsync(user);
     }
   };
+
+  
+  if(loading){
+    return <Loading/>
+  }
 
   return (
     <section className="h-full">
@@ -150,16 +159,17 @@ function Login() {
               </button>
             </div>
             <section className="flex items-center justify-center text-content gap-2 w-full my-5 ">
-            <hr className="w-26 md:w-32" />
-            <p className=" text-sm">Or continue with </p>
-            <hr className="w:26 md:w-32" />
-          </section>
-          <section className=" w-full">
-            <Google />
-          </section>
+              <hr className="w-26 md:w-32" />
+              <p className=" text-sm">Or continue with </p>
+              <hr className="w:26 md:w-32" />
+            </section>
+            <section className=" flex flex-col md:flex-row items-center justify-center gap-2 w-full md:justify-around">
+              <Google setLoading = {setLoading} />
+              <Facebook />
+            </section>
           </form>
-          
-          
+          {/* text-gray-500 */}
+
           <section className="flex items-center text-sm mt-10 justify-between md:px-8">
             <section className="flex items-center">
               <span>Dont have an account? </span>

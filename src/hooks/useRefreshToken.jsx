@@ -22,18 +22,25 @@ const useRefreshToken = () => {
           return response?.data?.access;
         } catch (error) {
           console.log(error);
+          handleLogout()
 
-          localStorage.removeItem("refresh_token");
-          localStorage.removeItem("access_token");
-          setAccessToken(null);
         }
       } else {
-        localStorage.removeItem("refresh_token");
-        localStorage.removeItem("access_token");
-        setAccessToken(null);
+        handleLogout()
       }
     }
+    else{
+      handleLogout()
+    }
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("refresh_token");
+    localStorage.removeItem("access_token");
+    setAccessToken(null);
+  };
+
+
 
   return refresh;
 };
